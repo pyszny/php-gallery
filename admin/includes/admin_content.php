@@ -7,93 +7,138 @@
                 Admin
                 <small>Subheading</small>
             </h1>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-users fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge"><?php echo $session->count; ?></div>
+                                    <div>New Views</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-            <?php
-
-            $user = Photo::find_by_id(4);
-            echo $user->title;
-            echo "<br>";
-//            $result_set = User::find_all_users();
-//            while($row = mysqli_fetch_array($result_set)) {
-//                echo $row['username'] . "<br>";               ///stare
-//            }
-
-
-
-//            $id = $session->getUserId();
-//            echo $id;
-
-
-//              ***create test***
-//            $user = new User();                        //instance of User class
-//            $user->username = "adadasdasd";               //setting values
-//            $user->password = "5454535";
-//            $user->first_name = "werwerewrwer";
-//            $user->last_name = "rrrrrrrrrrrrrrrrr";
-//            $user->create();                           //call create method (db INSERT query)
-            //
-            ///
-            ///  //***update test***//
-//            $user = User::find_by_id(15);        //find user is static- no instance needed
-//            $user->username = "update";
-//            $user->password = "test";
-//            $user->first_name = "update";
-//            $user->last_name = "test";                  //set value
-//            $user->update();                                //call method (db UPDATE query)
-
-//           $user = new User();
-//           $user->getProperties();
-//           $user->username = "slav";
-//            $user->save();
-
-            //  ***delete test***
-            //if($user) { $user->delete(); };
-
-//            $user = new User();
-//            $user->username = "NEW USER";
-//            $user->save();
-            //$user->password = "123456";             //nadanie tylko w instancji
-            //$user->save();                          //wrzucenie do bazy
-
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-photo fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">7</div>
+                                    <div>Photos</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Total Photos in Gallery</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
 
-//            $found_user = User::find_by_id(2);       //nowe OK
-//            echo $found_user->username;
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-user fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">8
+
+                                    </div>
+
+                                    <div>Users</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Total Users</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">8</div>
+                                    <div>Comments</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">Total Comments</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
 
-//            $user = User::instantiation($found_user);
-//            echo $user->username;
+            </div> <!--First Row-->
 
+            <!--scripts-->
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
 
-//            $users = User::find_all();                //nowe OK
-//            foreach($users as $user) {
-//                echo $user->username . "<br>";
-//            }
-//            $photo = new Photo();                        //instance of class
-//            $photo->title = "eee";               //setting values
-//            $photo->description = "aaa";
-//            $photo->size = 20;
-//            $photo->create();
-//
-            //$photo = Photo::find_by_id(1);
-            //$photo->delete();
-            echo INCLUDES_PATH;
-            echo '<br>';
-            $photos = Photo::find_all();                //nowe OK
-            foreach($photos as $photo) {
-                echo $photo->title . "<br>";
-            }
+                function drawChart() {
 
-            ?>
+                    var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Hours per Day'],
+                        ['Work',     11],
+                        ['Eat',      2],
+                        ['Commute',  2],
+                        ['Watch TV', 2],
+                        ['Sleep',    7]
+                    ]);
 
-            <ol class="breadcrumb">
-                <li>
-                    <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                </li>
-                <li class="active">
-                    <i class="fa fa-file"></i> Blank Page
-                </li>
-            </ol>
+                    var options = {
+                        title: 'My Daily Activities'
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                    chart.draw(data, options);
+                }
+            </script>
+            <!--/scripts-->
+
+            <div class="row">
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
+            </div>
+
         </div>
     </div>
     <!-- /.row -->
